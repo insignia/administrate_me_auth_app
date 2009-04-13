@@ -1,0 +1,19 @@
+<%= list_builder_for @records do |list|
+      list.name
+      list.url
+    end %>
+
+<% unless @tokens.empty? %>
+  <h1>Tokens</h1>
+  <p>The following tokens have been issued to applications in your name</p>
+
+  <%= list_builder_for @tokens, :report => true do |list|
+        list.html :caption => 'Application' do |token|
+          link_to token.client_application.name, token.client_application.url
+        end
+        list.authorized_at  :caption => 'Issued'
+        list.html :caption => '&nbsp;' do |token|
+          link_to 'Revoke!', :controller => 'oauth', :action => 'revoke', :token => token.token
+        end
+      end %>
+<% end %>

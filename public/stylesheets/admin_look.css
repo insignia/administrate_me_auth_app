@@ -242,6 +242,7 @@ div.pagination a:hover {
   padding: 5px;
   background-color: #ebebeb;
   color: #666666;
+  height: 21px;
 }
 
 #search form input.search_key {
@@ -402,6 +403,7 @@ div.elegant div.actions a.neutro:hover {
   margin-right: 10px;
 }
 
+#base_form div.float_left div.field,
 #base_form div.float_left div.field input,
 #base_form div.float_left div.field select,
 #base_form div.float_left div.check_box {
@@ -413,16 +415,29 @@ div.elegant div.actions a.neutro:hover {
   margin-right: 4px;
 }
 
+#base_form div.float_left_3 div.field,
 #base_form div.float_left_3 div.field input,
 #base_form div.float_left_3 div.field select,
 #base_form div.float_left_3 div.check_box {
   width: 300px;  
 }
 
+#base_form div.float_left div.field span select,
+#base_form div.float_left_3 div.field span select {
+  width: auto;
+}
+
 #base_form div.field input.highlight {
   font-size: 16px;
   font-weight: bold;
   color: #666666;
+}
+
+#base_form input[type=text]:focus,
+#base_form select:focus,
+#base_form textarea:focus {
+    background-color: #ffb;
+    border-color: #bbb;
 }
 
 #base_form div.actions {
@@ -473,7 +488,8 @@ div.elegant div.actions a.neutro:hover {
   margin-bottom: 5px;
 }
 
-#base_form div.field div.fieldWithErrors input {
+#base_form div.field div.fieldWithErrors input, 
+#base_form div.field div.fieldWithErrors textarea {
   background-color:#FEE2E2;
   border: 1px solid #b30000;  
 }

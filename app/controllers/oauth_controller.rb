@@ -56,7 +56,7 @@ class OauthController < ApplicationController
       @token.invalidate!
       flash[:notice] = "You've revoked the token for #{@token.client_application.name}"
     end
-    redirect_to oauth_clients_url
+    redirect_to user_oauth_clients_url(current_user)
   end
   
 end

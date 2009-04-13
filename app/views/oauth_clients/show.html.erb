@@ -1,20 +1,23 @@
-<h1>OAuth details for <%=@client_application.name %></h1>
+<h1>Oauth details for <%= @resource.name %></h1>
+<%=
+  present :elegant do |p|
+    p.body do |r|
+      r.field 'Consumer Key', @resource.key
+      r.field 'Consumer Secret', @resource.secret
+      r.field 'Request Token URL', "http#{'s' if request.ssl?}://#{request.host_with_port}#{@resource.oauth_server.request_token_path}"
+      r.field 'Access Token URL', "http#{'s' if request.ssl?}://#{request.host_with_port}#{@resource.oauth_server.access_token_path}"
+      r.field 'Authorize URL', "http#{'s' if request.ssl?}://#{request.host_with_port}#{@resource.oauth_server.authorize_path}"
+      r.field 'Created at', @resource.created_at
+      r.field 'Updated at', @resource.updated_at
+    end
+    p.actions do |r|
+#      r.text link_to('manage some nested resource', path_to_some_resource_path(@resource))
+      r.text edit_action
+      r.text destroy_action
+      r.text back_action
+    end
+  end
+%>
 <p>
-	<b>Consumer Key:</b> <%=@client_application.key %>
-</p>
-<p>
-	<b>Consumer Secret:</b> <%=@client_application.secret %>
-</p>
-<p>
-	<b>Request Token URL</b> http<%='s' if request.ssl? %>://<%= request.host_with_port %><%=@client_application.oauth_server.request_token_path %>
-</p>
-<p>
-	<b>Access Token URL</b> http<%='s' if request.ssl? %>://<%= request.host_with_port %><%=@client_application.oauth_server.access_token_path %>
-</p>
-<p>
-	<b>Authorize URL</b> http<%='s' if request.ssl? %>://<%= request.host_with_port %><%=@client_application.oauth_server.authorize_path %>
-</p>
-
-<p>
-	We support hmac-sha1 (recommended) as well as plain text in ssl mode.
+  We support hmac-sha1 (recommended) as well as plain text in ssl mode.
 </p>

@@ -11,14 +11,15 @@ ActionController::Routing::Routes.draw do |map|
   map.open_id_create '/opencreate', :controller => "users", :action => "create", :requirements => { :method => :get }
   
   # Restful Authentication Resources
-  map.resources :users
+  map.resources :users do |users|
+    users.resources :oauth_clients
+  end
   map.resources :passwords
   map.resource :session
   
   # Home Page
   map.root :controller => 'sessions', :action => 'new'
 
-  map.resources :oauth_clients
   map.authorize '/oauth/authorize',:controller=>'oauth',:action=>'authorize'
   map.request_token '/oauth/request_token',:controller=>'oauth',:action=>'request_token'
   map.access_token '/oauth/access_token',:controller=>'oauth',:action=>'access_token'

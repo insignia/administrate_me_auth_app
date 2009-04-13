@@ -1,6 +1,16 @@
 class OauthClientsController < ApplicationController
   before_filter :login_required
-  
+
+  administrate_me do |a|
+    a.belongs_to :user
+    a.set_model 'client_application'
+  end
+
+  def before_render_index
+    @tokens = current_user.tokens.find :all, :conditions => 'oauth_tokens.invalidated_at is null and oauth_tokens.authorized_at is not null'
+  end
+
+=begin
   def index
     @client_applications = current_user.client_applications
     @tokens = current_user.tokens.find :all, :conditions => 'oauth_tokens.invalidated_at is null and oauth_tokens.authorized_at is not null'
@@ -44,4 +54,6 @@ class OauthClientsController < ApplicationController
     flash[:notice] = "Destroyed the client application registration"
     redirect_to :action => "index"
   end
+=end
+
 end
