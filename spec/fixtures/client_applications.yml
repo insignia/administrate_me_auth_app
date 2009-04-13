@@ -1,0 +1,7 @@
+one:
+  user: quentin
+  name: Name
+  url: http://something.com
+  key: 1234
+  secret: 5678
+    

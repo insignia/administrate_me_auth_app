@@ -1,0 +1,100 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; 
+  font-family: arial,helvetica,clean,sans-serif;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 14px;
+  color: #36393D;
+}
+
+#content {
+  width: 600px;
+  margin: 10% auto;
+}
+
+#content form fieldset {
+  padding: 10px 20px;
+  margin: 10px 0px;
+  border: 1px solid #ebebeb;
+  background-color: #f4f4f4;
+}
+
+#content form fieldset label {
+  color: #36393D;
+}
+
+#content form fieldset input.text-box {
+  border: 1px solid #cfcfcf;
+  width: 100%;
+  font-size: 22px;
+  color: #36393D;
+  margin-bottom: 10px;
+}
+
+#content form a {
+  color: #B02B2C;
+}
+
+/* === FLASH MESSAGES === */
+div#flash-notice, div#flash-error {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+	font-size: 14px;
+	font-weight: bold;  
+}
+
+div#flash-notice {
+  border: 1px solid #006E2E;
+	background-color: #008C00;
+	color: white;
+}
+
+div#flash-warning {
+	
+}
+
+div#flash-error {
+	border: 1px solid #CC0000;
+	background-color: #FF1A00;
+	color: white;
+}
+
+/* === ERROR MESSAGES === */
+div#errorExplanation {
+	
+}
+
+div#errorExplanation h2 {
+	
+}
+
+div#errorExplanation p {
+	
+}
+
+div#errorExplanation ul {
+	
+}
+
+div#errorExplanation ul li {
+	
+}
+
+/* === FORMS === */
+div.fieldWithErrors {
+	
+}
+
+div.fieldWithErrors label {
+	
+}
+
+div.fieldWithErrors input, div.fieldWithErrors select, 
+div.fieldWithErrors textarea
+{
+	
+}

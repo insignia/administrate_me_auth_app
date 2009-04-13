@@ -1,0 +1,22 @@
+InitializableAttrAccessor
+=========================
+
+Allows a class to be initialized with a hash or a list of parameters.
+
+Example
+=======
+
+  class SomeClass
+    initializable_attr_accessor :first_name, :last_name
+  end
+
+  @some_instance = SomeClass.new(:first_name => 'Carlos', :last_name => 'Kozuszko')
+  @some_instance.first_name # => 'Carlos'
+  @some_instance.last_name  # => 'Kozuszko'
+
+  @some_instance = SomeClass.new('Carlos', 'Kozuszko')
+  @some_instance.first_name # => 'Carlos'
+  @some_instance.last_name  # => 'Kozuszko'
+
+
+Copyright (c) 2008 [Carlos Kozuszko], released under the MIT license

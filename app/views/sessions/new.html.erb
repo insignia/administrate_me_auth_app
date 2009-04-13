@@ -1,0 +1,34 @@
+<%= page_title "Login", :h2 %>
+<p>Welcome to this wonderfull Rails app...</p>
+<% form_tag session_path do %>
+	<fieldset>
+		<legend>Your Details</legend>
+		<ol>
+			<li>
+				<%= label_tag 'login', 'Username' %>
+				<%= text_field_tag 'login', @login, :class => "text-box"  %>
+			</li>
+			<li>
+				<%= label_tag 'password' %>
+				<%= password_field_tag 'password', nil, :class => "text-box"  %>
+			</li>
+			<li>
+			  <%= check_box_tag 'remember_me', '1', @remember_me %>
+				<%= label_tag 'remember_me', 'Remember me' %>				
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Login with OpenID</legend>
+		<ol>
+			<li>
+				<%= label_tag 'openid_url', 'OpenID URL' %>
+				<%= text_field_tag 'openid_url' %>
+			</li>
+		</ol>
+	</fieldset>
+	<div class="buttons">
+		<%= submit_tag 'Login' %>
+		<%= link_to 'Forgotten Password', forgot_password_path %>
+	</div>
+<% end -%>
